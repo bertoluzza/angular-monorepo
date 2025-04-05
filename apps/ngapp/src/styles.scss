@@ -1,3 +1,7 @@
+@use './assets/scss' as s;
+
+@layer base, vendors, components, utilities, custom;
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,9 +10,50 @@
 
 html,
 body {
-  height: 100%;
+  @apply h-full;
 }
+
 body {
-  margin: 0;
-  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  @apply m-0 font-sans;
+}
+
+h1 {
+  @apply text-5xl font-black mb-8;
+}
+
+h2 {
+  @apply text-3xl font-black mb-4;
+}
+
+p {
+  @apply text-lg leading-relaxed mb-4;
+
+  &.subtitle {
+    @apply text-2xl leading-relaxed text-slate-600;
+  }
+}
+
+ul {
+  @apply list-disc text-lg ml-4 mb-4;
+
+  li {
+    @apply py-2;
+  }
+
+  &.checklist {
+    @apply list-none;
+
+    li {
+      @apply relative pl-8;
+
+      &::before {
+        @apply absolute left-0 top-2;
+        content: '✅';
+      }
+    }
+  }
+}
+
+code {
+  @apply inline-block mx-2 px-2 bg-blue-200 rounded;
 }

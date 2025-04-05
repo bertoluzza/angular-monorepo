@@ -7,7 +7,9 @@
     "start": "nx serve ngapp",
     "build": "nx build ngapp",
     "test": "nx run ngapp:test",
-    "lint": "nx run ngapp:lint"
+    "lint": "nx run ngapp:lint",
+    "format:test": "prettier --list-different \"./projects/**/*.{ts,html,scss,json}\"",
+    "format:write": "prettier --write \"./projects/**/*.{ts,html,scss,json}\""
   },
   "private": true,
   "dependencies": {

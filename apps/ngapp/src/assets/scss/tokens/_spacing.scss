@@ -1,0 +1,31 @@
+@layer utilities {
+  // Bootstrap-like shorthand for margin
+  .m-0     { margin: 0 !important; }
+  .m-auto  { margin: auto !important; }
+
+  .mt-0    { margin-top: 0 !important; }
+  .mb-0    { margin-bottom: 0 !important; }
+  .ms-0    { margin-left: 0 !important; }
+  .me-0    { margin-right: 0 !important; }
+
+  .mt-auto { margin-top: auto !important; }
+  .mb-auto { margin-bottom: auto !important; }
+  .ms-auto { margin-left: auto !important; }
+  .me-auto { margin-right: auto !important; }
+
+  // Padding
+  .p-0     { padding: 0 !important; }
+  .pt-0    { padding-top: 0 !important; }
+  .pb-0    { padding-bottom: 0 !important; }
+  .ps-0    { padding-left: 0 !important; }
+  .pe-0    { padding-right: 0 !important; }
+
+  // Spacing units (Bootstrap style, avoids Tailwind’s t-shirt scale)
+  .m-1rem  { margin: 1rem !important; }
+  .p-1rem  { padding: 1rem !important; }
+
+  .mt-2rem { margin-top: 2rem !important; }
+  .pb-2rem { padding-bottom: 2rem !important; }
+
+  .gap-1rem { gap: 1rem !important; }
+}
