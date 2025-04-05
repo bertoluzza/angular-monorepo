@@ -1,7 +1,5 @@
 @use './assets/scss' as s;
-
 @layer base, vendors, components, utilities, custom;
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -48,6 +46,7 @@ ul {
 
       &::before {
         @apply absolute left-0 top-2;
+
         content: '✅';
       }
     }

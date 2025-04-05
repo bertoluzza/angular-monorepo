@@ -3,8 +3,7 @@
 @use '@angular/material' as mat;
 
 @layer vendor {
-
-  @include mat.core();
+  @include mat.core;
 
   // TODO rework to mat3 theme
   $ax-blue-palette: (

@@ -10,6 +10,7 @@
 /// @return {number} `$px` converted to rem and adding `$add`.
 @function to-rem($px) {
   $rem-size: math.div(strip-unit($px), 16);
+
   @return $rem-size * 1rem;
 }
 
@@ -21,6 +22,7 @@
   @if is-number($number) and not math.is-unitless($number) {
     @return math.div($number, $number * 0 + 1);
   }
+
   @return $number;
 }
 
