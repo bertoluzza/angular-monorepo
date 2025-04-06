@@ -1,4 +1,6 @@
-@forward 'base/_index';
-@forward 'tokens/_index';
-@forward 'utils/_index';
-@forward 'vendors/_index';
+@use 'variables';
+@use 'functions';
+@use 'mixins';
+@use 'tokens/_index' as *;
+@use 'utilities/_index' as *;
+@use 'vendors/_index' as *;

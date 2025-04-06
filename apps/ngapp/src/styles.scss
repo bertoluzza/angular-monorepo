@@ -1,3 +1,5 @@
+// Main SCSS file for the Angular application
+
 @use './assets/scss' as s;
 @layer base, vendors, components, utilities, custom;
 @tailwind base;

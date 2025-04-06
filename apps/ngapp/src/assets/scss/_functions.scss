@@ -1,0 +1,89 @@
+@use 'sass:color';
+@use 'sass:math';
+@use 'sass:map';
+@use 'sass:string';
+@use 'sass:meta';
+@use 'variables' as *;
+
+/// It converts the specified pixel size to rem. The result include 'rem'.
+/// @param {number} $px
+///   The pixels to convert to rem. This could be a unitless number (e.g. 10) or a number (e.g. 10px).
+/// @return {number} `$px` converted to rem and adding `$add`.
+@function to-rem($px) {
+  $rem-size: math.div(strip-unit($px), 16);
+
+  @return $rem-size * 1rem;
+}
+
+/// It removes the unit from the specified size and return the result.
+/// @param {number} $number
+///    The number from which the unit should be stripped.
+/// @returns {number} `$number` without the unit.
+@function strip-unit($number) {
+  @if is-number($number) and not math.is-unitless($number) {
+    @return math.div($number, $number * 0 + 1);
+  }
+
+  @return $number;
+}
+
+/// It returns a value which specifies if the provided value is a number.
+/// @param {any} $value
+///    The value to check.
+/// @returns {boolean} true if `$value` is a number, otherwise false.
+@function is-number($value) {
+  @return meta.type-of($value) == 'number';
+}
+
+/// It returns a value which specifies if the provided value is a number.
+/// @param {any} $value
+///    The value to check.
+/// @returns {boolean} true if `$value` is a number, otherwise false.
+@function is-number($value) {
+  @return meta.type-of($value) == 'number';
+}
+
+/// Applies an offset to match the Marvel views font-weight
+/// @param {number} $number
+///    The number font-weight that should be offsetted.
+/// @returns {number} `$number` offsetted.
+@function apply-font-weight-offset($number) {
+  @if is-number($number) {
+    @return $number - 100;
+  }
+
+  @return $number;
+}
+
+/// It converts the specified HEX number in the RGB notation. e.g. #000000 -> 0, 0, 0
+/// @param {any} $value
+///    The hex color to convert to rgb.
+/// @returns {string} A string representing the input parameter as RGB color.
+@function hex-to-rgb($hex) {
+  @return '#{red($hex)}, #{green($hex)}, #{blue($hex)}';
+}
+
+@function font($font) {
+  @return string.unquote($font);
+}
+
+@function breakpoint-min($name, $breakpoints: $grid-breakpoints) {
+  $min: map.get($breakpoints, $name);
+
+  @return if($min != 0, $min, null);
+}
+
+@function breakpoint-infix($name, $breakpoints: $grid-breakpoints) {
+  @return if(breakpoint-min($name, $breakpoints) == null, '', '-#{$name}');
+}
+
+// Returns a blank string if smallest breakpoint, otherwise returns the name with a dash in front.
+// Useful for making responsive utilities.
+//
+//    >> breakpoint-infix(xs, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1400px))
+//    ""  (Returns a blank string)
+//    >> breakpoint-infix(sm, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1400px))
+//    "-sm"
+@function breakpoint-infix($name, $breakpoints: $grid-breakpoints) {
+  @return if(breakpoint-min($name, $breakpoints) == null, '', '-#{$name}');
+}

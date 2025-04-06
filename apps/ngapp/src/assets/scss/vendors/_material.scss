@@ -1,48 +1,46 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @use '@angular/material' as mat;
+@include mat.core;
 
-@layer vendor {
-  @include mat.core;
+// TODO rework to mat3 theme
+$ax-blue-palette: (
+  // should be same as in tailwind.config.js
+  50: #eff6ff,
+  100: #dbeafe,
+  200: #bfdbfe,
+  300: #93c5fd,
+  400: #60a5fa,
+  500: #3b82f6,
+  600: #4c73db,
+  700: #2852c8,
+  800: #2144a6,
+  900: #1d3c91,
+  contrast: (
+    50: #000,
+    100: #000,
+    200: #000,
+    300: #000,
+    400: #000,
+    500: #fff,
+    600: #fff,
+    700: #fff,
+    800: #fff,
+    900: #fff,
+  )
+);
 
-  // TODO rework to mat3 theme
-  $ax-blue-palette: (
-    // should be same as in tailwind.config.js
-    50: #eff6ff,
-    100: #dbeafe,
-    200: #bfdbfe,
-    300: #93c5fd,
-    400: #60a5fa,
-    500: #3b82f6,
-    600: #4c73db,
-    700: #2852c8,
-    800: #2144a6,
-    900: #1d3c91,
-    contrast: (
-      50: #000,
-      100: #000,
-      200: #000,
-      300: #000,
-      400: #000,
-      500: #fff,
-      600: #fff,
-      700: #fff,
-      800: #fff,
-      900: #fff,
-    )
-  );
+// stylelint-disable
+$example-app-theme: mat.define-theme(
+  (
+    color: (
+      theme-type: light,
+      primary: mat.$azure-palette,
+      tertiary: mat.$red-palette,
+    ),
+  )
+);
 
-  $example-app-theme: mat.define-theme(
-      (
-        color: (
-          theme-type: light,
-          primary: mat.$azure-palette,
-          tertiary: mat.$red-palette,
-        ),
-      )
-  );
-
-  html {
-    @include mat.all-component-themes($example-app-theme);
-  }
+html {
+  @include mat.all-component-themes($example-app-theme);
 }
