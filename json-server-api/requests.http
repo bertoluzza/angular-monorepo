@@ -1,0 +1,8 @@
+### GET all products
+GET http://localhost:3000/products?limit=5
+
+### GET all products (paginated)
+GET http://localhost:3000/products?_page=1&_per_page=5
+
+### GET product by ID
+GET http://localhost:3000/products/id
