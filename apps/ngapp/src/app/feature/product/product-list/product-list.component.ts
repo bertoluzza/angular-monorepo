@@ -6,7 +6,6 @@ import {
   signal,
 } from '@angular/core';
 import { Product } from '../../../core/models/product-list-dto.model';
-import { ProductCategory } from '../../../core/enums/product-category.enum';
 import {
   MatCell,
   MatCellDef,
@@ -79,37 +78,15 @@ export class ProductListComponent implements OnInit {
       .subscribe();
   }
 
-  addProduct(): void {
-    const newProduct: Omit<Product, 'id'> = {
-      name: 'New Product',
-      category: ProductCategory.Furniture,
-      price: 0,
-      inStock: true,
-    };
-    this.spinnerService.show();
-    this.productService
-      .create(newProduct)
-      .pipe(
-        switchMap(() => this.productService.getAll()),
-        finalize(() => this.spinnerService.hide())
-      )
-      .subscribe((products) => this.productsDataSource.set(products ?? []));
+  onAddProduct() {
+    console.log('onAddProduct');
   }
 
-  editProduct(product: Product) {
-    console.log('editProduct', product);
-    const updated = { ...product, name: product.name + ' (Edited)' };
-    this.spinnerService.show();
-    this.productService
-      .update(product.id, updated)
-      .pipe(
-        switchMap(() => this.productService.getAll()),
-        finalize(() => this.spinnerService.hide())
-      )
-      .subscribe((products) => this.productsDataSource.set(products ?? []));
+  onEditProduct(product: Product) {
+    console.log('onEditProduct', product);
   }
 
-  deleteProduct(product: Product) {
+  onDeleteProduct(product: Product) {
     this.spinnerService.show();
 
     this.dialog

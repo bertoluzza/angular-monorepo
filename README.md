@@ -8,6 +8,7 @@
 
 1. Installare git: https://git-scm.com/downloads/win
 2. Installare `node` ed `npm` tramite `nvm`
+
 - Alla pagina https://github.com/coreybutler/nvm-windows/releases scaricare ed installare `nvm-setup.exe`
 - Aprire un terminale e eseguire i 2 comandi:
 
@@ -19,6 +20,7 @@ nvm use 20
 - Riavviare il computer ed assicurarsi di aver installato le versioni di Node `20.13.1` e npm `10.5.2`
 
 3. Clonare il repository in locale nella cartella `C:\dev` (o in un'altra cartella a piacere)
+
 ```
 git clone https://github.com/bertoluzza/angular-monorepo.git
 ```
@@ -35,10 +37,11 @@ git clone https://github.com/bertoluzza/angular-monorepo.git
 7. Imposta la execution policy di PowerShell per eseguire gli script:
    - Aprire PowerShell come amministratore
    - Eseguire il comando `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser`
-   - Conferma (_[A]_, _Yes to All_) e chiudi PowerShell
-7. In un terminale nella folder `c:\dev\angular-monorepo`, eseguire il comando `npm install` per installare le dipendenze del progetto
-8. Eseguire il comando `npm run start` per avviare l'applicazione Angular
-9. Installare Angular DevTools per il proprio browser: https://angular.dev/tools/devtools
+   - Conferma (_[A] Yes to All_) e chiudi PowerShell
+8. In un terminale nella folder `c:\dev\angular-monorepo`, eseguire il comando `npm install` per installare le dipendenze del progetto
+9. Eseguire il comando `npm run start` per avviare l'applicazione Angular
+10. Installare Angular DevTools per il proprio browser: https://angular.dev/tools/devtools
+11. Navigare a [http://localhost:4200](http://localhost:4200)
 
 ## Troubleshooting
 
@@ -52,6 +55,7 @@ git clone https://github.com/bertoluzza/angular-monorepo.git
   - In caso di anomalie provare la modalità incognito o disabilitare le estensioni del browser (ad-blockers, ecc.)
 - _Filename too long_: `git config --system core.longpaths true` ([How-to-fix-Git-Clone-Filename-too-long-Error-in-Windows](https://katalon-inc.my.site.com/katalonhelpcenter/s/article/How-to-fix-Git-Clone-Filename-too-long-Error-in-Windows))
 - In caso di problemi con `npm install`:
+
 ```
 npm cache clean --force
 Remove-Item -Path node-modules -Force -Recurse -ErrorAction SilentlyContinue
