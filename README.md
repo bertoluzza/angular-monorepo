@@ -2,13 +2,12 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/9ed2b818-8bea-4120-acaf-a0743609c70c/deploy-status)](https://app.netlify.com/sites/angular-monorepo/deploys)
 
-- [Demo](https://angular-monorepo.netlify.app/)
+- [Demo su netlify](https://angular-monorepo.netlify.app/)
 
 ## Setup iniziale (Windows)
 
 1. Installare git: https://git-scm.com/downloads/win
 2. Installare `node` ed `npm` tramite `nvm`
-
 - Alla pagina https://github.com/coreybutler/nvm-windows/releases scaricare ed installare `nvm-setup.exe`
 - Aprire un terminale e eseguire i 2 comandi:
 
@@ -20,15 +19,26 @@ nvm use 20
 - Riavviare il computer ed assicurarsi di aver installato le versioni di Node `20.13.1` e npm `10.5.2`
 
 3. Clonare il repository in locale nella cartella `C:\dev` (o in un'altra cartella a piacere)
-
 ```
-git clone git@github.com:bertoluzza/angular-monorepo.git
+git clone https://github.com/bertoluzza/angular-monorepo.git
 ```
 
-4. Ora ne
-   npm install
-
-5. Installare Visual Studio Code o un altro IDE a piacere
+4. Installare Visual Studio Code o un altro IDE a piacere
+5. Per Visual Studio code, aprire il progetto ed installare le estensioni consigliate:
+   - NX console
+   - ESLint
+   - Prettier - Code formatter
+   - Tailwind CSS IntelliSense
+6. Installare globalmente:
+   - `nx`: `npm install -g nx@latest`
+   - `@angular/cli`: `npm install -g @angular/cli`
+7. Imposta la execution policy di PowerShell per eseguire gli script:
+   - Aprire PowerShell come amministratore
+   - Eseguire il comando `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser`
+   - Conferma (_[A]_, _Yes to All_) e chiudi PowerShell
+7. In un terminale nella folder `c:\dev\angular-monorepo`, eseguire il comando `npm install` per installare le dipendenze del progetto
+8. Eseguire il comando `npm run start` per avviare l'applicazione Angular
+9. Installare Angular DevTools per il proprio browser: https://angular.dev/tools/devtools
 
 ## Troubleshooting
 
@@ -40,8 +50,16 @@ git clone git@github.com:bertoluzza/angular-monorepo.git
   - Ubuntu: Ubuntu users please run: `sudo apt-get install g++ build-essential`
 - Usare chrome
   - In caso di anomalie provare la modalità incognito o disabilitare le estensioni del browser (ad-blockers, ecc.)
-
----
+- _Filename too long_: `git config --system core.longpaths true` ([How-to-fix-Git-Clone-Filename-too-long-Error-in-Windows](https://katalon-inc.my.site.com/katalonhelpcenter/s/article/How-to-fix-Git-Clone-Filename-too-long-Error-in-Windows))
+- In caso di problemi con `npm install`:
+```
+npm cache clean --force
+Remove-Item -Path node-modules -Force -Recurse -ErrorAction SilentlyContinue
+Remove-Item -Path .angular -Force -Recurse -ErrorAction SilentlyContinue
+Remove-Item -Path .nx -Force -Recurse -ErrorAction SilentlyContinue
+Remove-Item -Path tmp -Force -Recurse -ErrorAction SilentlyContinue
+npm install
+```
 
 <a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
 
