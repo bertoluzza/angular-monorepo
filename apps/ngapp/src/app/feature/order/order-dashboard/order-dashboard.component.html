@@ -1,2 +1,228 @@
 <code class="m-0 mb-2">order-dashboard.component.ts</code>
 <h1>Order Dashboard</h1>
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+  <!-- Order Card 1 -->
+  <div class="bg-white rounded-lg shadow overflow-hidden">
+    <div class="p-4 border-b border-gray-200">
+      <div class="flex justify-between items-center">
+        <h3 class="font-bold text-lg">#ORD-2587</h3>
+        <span class="px-2 py-1 bg-green-100 text-green-800 rounded-full text-xs"
+          >Completed</span
+        >
+      </div>
+    </div>
+    <div class="p-4">
+      <div class="flex justify-between mb-2">
+        <span class="text-gray-500">Customer:</span>
+        <span class="font-medium">John Doe</span>
+      </div>
+      <div class="flex justify-between mb-2">
+        <span class="text-gray-500">Date:</span>
+        <span>Apr 05, 2025</span>
+      </div>
+      <div class="flex justify-between mb-2">
+        <span class="text-gray-500">Items:</span>
+        <span>3 items</span>
+      </div>
+      <div class="flex justify-between mb-4">
+        <span class="text-gray-500">Total:</span>
+        <span class="font-bold">€125.99</span>
+      </div>
+      <div class="flex justify-end space-x-2">
+        <button
+          class="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600"
+        >
+          <i class="fas fa-eye mr-1"></i> View
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Order Card 2 -->
+  <div class="bg-white rounded-lg shadow overflow-hidden">
+    <div class="p-4 border-b border-gray-200">
+      <div class="flex justify-between items-center">
+        <h3 class="font-bold text-lg">#ORD-2586</h3>
+        <span
+          class="px-2 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs"
+          >Pending</span
+        >
+      </div>
+    </div>
+    <div class="p-4">
+      <div class="flex justify-between mb-2">
+        <span class="text-gray-500">Customer:</span>
+        <span class="font-medium">Jane Smith</span>
+      </div>
+      <div class="flex justify-between mb-2">
+        <span class="text-gray-500">Date:</span>
+        <span>Apr 05, 2025</span>
+      </div>
+      <div class="flex justify-between mb-2">
+        <span class="text-gray-500">Items:</span>
+        <span>2 items</span>
+      </div>
+      <div class="flex justify-between mb-4">
+        <span class="text-gray-500">Total:</span>
+        <span class="font-bold">€237.50</span>
+      </div>
+      <div class="flex justify-end space-x-2">
+        <button
+          class="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600"
+        >
+          <i class="fas fa-eye mr-1"></i> View
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Order Card 3 -->
+  <div class="bg-white rounded-lg shadow overflow-hidden">
+    <div class="p-4 border-b border-gray-200">
+      <div class="flex justify-between items-center">
+        <h3 class="font-bold text-lg">#ORD-2585</h3>
+        <span class="px-2 py-1 bg-green-100 text-green-800 rounded-full text-xs"
+          >Completed</span
+        >
+      </div>
+    </div>
+    <div class="p-4">
+      <div class="flex justify-between mb-2">
+        <span class="text-gray-500">Customer:</span>
+        <span class="font-medium">Robert Brown</span>
+      </div>
+      <div class="flex justify-between mb-2">
+        <span class="text-gray-500">Date:</span>
+        <span>Apr 04, 2025</span>
+      </div>
+      <div class="flex justify-between mb-2">
+        <span class="text-gray-500">Items:</span>
+        <span>1 item</span>
+      </div>
+      <div class="flex justify-between mb-4">
+        <span class="text-gray-500">Total:</span>
+        <span class="font-bold">€89.25</span>
+      </div>
+      <div class="flex justify-end space-x-2">
+        <button
+          class="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600"
+        >
+          <i class="fas fa-eye mr-1"></i> View
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Order Card 4 -->
+  <div class="bg-white rounded-lg shadow overflow-hidden">
+    <div class="p-4 border-b border-gray-200">
+      <div class="flex justify-between items-center">
+        <h3 class="font-bold text-lg">#ORD-2584</h3>
+        <span class="px-2 py-1 bg-red-100 text-red-800 rounded-full text-xs"
+          >Cancelled</span
+        >
+      </div>
+    </div>
+    <div class="p-4">
+      <div class="flex justify-between mb-2">
+        <span class="text-gray-500">Customer:</span>
+        <span class="font-medium">Emily Johnson</span>
+      </div>
+      <div class="flex justify-between mb-2">
+        <span class="text-gray-500">Date:</span>
+        <span>Apr 04, 2025</span>
+      </div>
+      <div class="flex justify-between mb-2">
+        <span class="text-gray-500">Items:</span>
+        <span>4 items</span>
+      </div>
+      <div class="flex justify-between mb-4">
+        <span class="text-gray-500">Total:</span>
+        <span class="font-bold">€354.75</span>
+      </div>
+      <div class="flex justify-end space-x-2">
+        <button
+          class="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600"
+        >
+          <i class="fas fa-eye mr-1"></i> View
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Order Card 5 -->
+  <div class="bg-white rounded-lg shadow overflow-hidden">
+    <div class="p-4 border-b border-gray-200">
+      <div class="flex justify-between items-center">
+        <h3 class="font-bold text-lg">#ORD-2583</h3>
+        <span class="px-2 py-1 bg-green-100 text-green-800 rounded-full text-xs"
+          >Completed</span
+        >
+      </div>
+    </div>
+    <div class="p-4">
+      <div class="flex justify-between mb-2">
+        <span class="text-gray-500">Customer:</span>
+        <span class="font-medium">Michael Wilson</span>
+      </div>
+      <div class="flex justify-between mb-2">
+        <span class="text-gray-500">Date:</span>
+        <span>Apr 03, 2025</span>
+      </div>
+      <div class="flex justify-between mb-2">
+        <span class="text-gray-500">Items:</span>
+        <span>2 items</span>
+      </div>
+      <div class="flex justify-between mb-4">
+        <span class="text-gray-500">Total:</span>
+        <span class="font-bold">€129.99</span>
+      </div>
+      <div class="flex justify-end space-x-2">
+        <button
+          class="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600"
+        >
+          <i class="fas fa-eye mr-1"></i> View
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Order Card 6 -->
+  <div class="bg-white rounded-lg shadow overflow-hidden">
+    <div class="p-4 border-b border-gray-200">
+      <div class="flex justify-between items-center">
+        <h3 class="font-bold text-lg">#ORD-2582</h3>
+        <span
+          class="px-2 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs"
+          >Pending</span
+        >
+      </div>
+    </div>
+    <div class="p-4">
+      <div class="flex justify-between mb-2">
+        <span class="text-gray-500">Customer:</span>
+        <span class="font-medium">Sarah Davis</span>
+      </div>
+      <div class="flex justify-between mb-2">
+        <span class="text-gray-500">Date:</span>
+        <span>Apr 03, 2025</span>
+      </div>
+      <div class="flex justify-between mb-2">
+        <span class="text-gray-500">Items:</span>
+        <span>1 item</span>
+      </div>
+      <div class="flex justify-between mb-4">
+        <span class="text-gray-500">Total:</span>
+        <span class="font-bold">€79.50</span>
+      </div>
+      <div class="flex justify-end space-x-2">
+        <button
+          class="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600"
+        >
+          <i class="fas fa-eye mr-1"></i> View
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

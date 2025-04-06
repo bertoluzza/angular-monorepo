@@ -1,5 +1,48 @@
 # Ngapp
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9ed2b818-8bea-4120-acaf-a0743609c70c/deploy-status)](https://app.netlify.com/sites/angular-monorepo/deploys)
+
+- [Demo](https://angular-monorepo.netlify.app/)
+
+## Setup iniziale (Windows)
+
+1. Installare git: https://git-scm.com/downloads/win
+2. Installare `node` ed `npm` tramite `nvm`
+
+- Alla pagina https://github.com/coreybutler/nvm-windows/releases scaricare ed installare `nvm-setup.exe`
+- Aprire un terminale e eseguire i 2 comandi:
+
+```
+nvm install 20.13.1
+nvm use 20
+```
+
+- Riavviare il computer ed assicurarsi di aver installato le versioni di Node `20.13.1` e npm `10.5.2`
+
+3. Clonare il repository in locale nella cartella `C:\dev` (o in un'altra cartella a piacere)
+
+```
+git clone git@github.com:bertoluzza/angular-monorepo.git
+```
+
+4. Ora ne
+   npm install
+
+5. Installare Visual Studio Code o un altro IDE a piacere
+
+## Troubleshooting
+
+- Angular CLI `npm install -g @angular/cli`
+  - `Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned`
+  - vedi [angular.io](https://v17.angular.io/guide/setup-local#setting-up-the-local-environment-and-workspace)
+- node-gyp:
+  - Windows + OS X consultare: https://github.com/nodejs/node-gyp
+  - Ubuntu: Ubuntu users please run: `sudo apt-get install g++ build-essential`
+- Usare chrome
+  - In caso di anomalie provare la modalità incognito o disabilitare le estensioni del browser (ad-blockers, ecc.)
+
+---
+
 <a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
 
 ✨ Your new, shiny [Nx workspace](https://nx.dev) is ready ✨.
