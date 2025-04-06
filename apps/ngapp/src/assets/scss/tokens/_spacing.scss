@@ -1,86 +1,79 @@
+@use 'sass:meta';
+@use '../variables' as *;
 // stylelint-disable declaration-no-important
 
 @layer utilities {
-  // Bootstrap-like shorthand for margin
-  .m-0 {
-    margin: 0 !important;
-  }
+  $spacer: 1rem;
+  $spacers: (
+    0: 0,
+    1: $spacer * 0.25,
+    2: $spacer * 0.5,
+    3: $spacer,
+    4: $spacer * 1.5,
+    5: $spacer * 3,
+    auto: auto,
+  );
+  $breakpoints: (
+    xs: null,
+    sm: 'min-width: 576px',
+    md: 'min-width: 768px',
+    lg: 'min-width: 992px',
+    xl: 'min-width: 1200px',
+    xxl: 'min-width: 1400px',
+  );
+  $sides: (
+    null: '',
+    t: 'top',
+    b: 'bottom',
+    s: 'left',
+    e: 'right',
+    x: (
+      'left',
+      'right',
+    ),
+    y: (
+      'top',
+      'bottom',
+    ),
+  );
 
-  .m-auto {
-    margin: auto !important;
-  }
+  @each $bp, $media in $breakpoints {
+    @each $prop in (m, p) {
+      $css-prop: if($prop == m, margin, padding);
 
-  .mt-0 {
-    margin-top: 0 !important;
-  }
+      @each $side, $dirs in $sides {
+        @each $size, $value in $spacers {
+          $class: if(
+            $bp == xs or $bp == null,
+            '.#{$prop}#{$side}-#{$size}',
+            '.#{$prop}#{$side}-#{$bp}-#{$size}'
+          );
 
-  .mb-0 {
-    margin-bottom: 0 !important;
-  }
-
-  .ms-0 {
-    margin-left: 0 !important;
-  }
-
-  .me-0 {
-    margin-right: 0 !important;
-  }
-
-  .mt-auto {
-    margin-top: auto !important;
-  }
-
-  .mb-auto {
-    margin-bottom: auto !important;
-  }
-
-  .ms-auto {
-    margin-left: auto !important;
-  }
-
-  .me-auto {
-    margin-right: auto !important;
-  }
-
-  // Padding
-  .p-0 {
-    padding: 0 !important;
-  }
-
-  .pt-0 {
-    padding-top: 0 !important;
-  }
-
-  .pb-0 {
-    padding-bottom: 0 !important;
-  }
-
-  .ps-0 {
-    padding-left: 0 !important;
-  }
-
-  .pe-0 {
-    padding-right: 0 !important;
-  }
-
-  // Spacing units (Bootstrap style, avoids Tailwind’s t-shirt scale)
-  .m-1rem {
-    margin: 1rem !important;
-  }
-
-  .p-1rem {
-    padding: 1rem !important;
-  }
-
-  .mt-2rem {
-    margin-top: 2rem !important;
-  }
-
-  .pb-2rem {
-    padding-bottom: 2rem !important;
-  }
-
-  .gap-1rem {
-    gap: 1rem !important;
+          @if $media {
+            @media (#{$media}) {
+              #{$class} {
+                @if meta.type-of($dirs) == 'list' {
+                  @each $dir in $dirs {
+                    #{$css-prop}-#{$dir}: $value !important;
+                  }
+                } @else {
+                  #{$css-prop}-#{$dirs}: $value !important;
+                }
+              }
+            }
+          } @else {
+            #{$class} {
+              @if meta.type-of($dirs) == 'list' {
+                @each $dir in $dirs {
+                  #{$css-prop}-#{$dir}: $value !important;
+                }
+              } @else {
+                #{$css-prop}-#{$dirs}: $value !important;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
