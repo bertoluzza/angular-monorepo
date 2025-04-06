@@ -43,9 +43,6 @@ export function provideCore({ routes }: CoreOptions) {
     provideHttpClient(withFetch(), withInterceptors([delayInterceptor])),
     provideRouter(
       routes,
-      withRouterConfig({
-        onSameUrlNavigation: 'reload',
-      }),
       withComponentInputBinding(),
       withEnabledBlockingInitialNavigation(),
       withInMemoryScrolling({
