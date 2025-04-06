@@ -8,6 +8,13 @@
     "stylelint-config-sass-guidelines"
   ],
   "rules": {
+    "max-nesting-depth": [
+      3,
+      {
+        "ignoreAtRules": ["each", "media", "supports", "include"],
+        "severity": "warning"
+      }
+    ],
     "declaration-block-no-duplicate-properties": true,
     "declaration-block-no-redundant-longhand-properties": true,
     "declaration-no-important": true,
@@ -17,32 +24,12 @@
       true,
       {
         "ignoreProperties": {
-          "/.+/": ["/rem/", "/theme-color/", "/rgba/", "/\\$/"]
+          "/.+/": ["/to-rem/", "/theme-color/", "/rgba/", "/\\$/"]
         }
       }
     ],
-    "at-rule-no-unknown": [
-      true,
-      {
-        "ignoreAtRules": [
-          "*apply*",
-          "/^view/",
-          "each",
-          "else",
-          "forward",
-          "function",
-          "if",
-          "include",
-          "layer",
-          "mixin",
-          "responsive",
-          "return",
-          "screen",
-          "tailwind",
-          "use",
-          "variants"
-        ]
-      }
-    ]
+    "function-no-unknown": null,
+    "scss/at-rule-no-unknown": null,
+    "selector-no-qualifying-type": null
   }
 }

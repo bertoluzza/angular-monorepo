@@ -3,7 +3,8 @@
 //
 // Text truncation
 //
-
-.text-truncate {
-  @include text-truncate;
+@layer base {
+  .text-truncate {
+    @include text-truncate;
+  }
 }

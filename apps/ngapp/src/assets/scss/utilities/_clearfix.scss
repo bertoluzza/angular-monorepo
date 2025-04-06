@@ -6,6 +6,8 @@
   }
 }
 
-.clearfix {
-  @include clearfix;
+@layer base {
+  .clearfix {
+    @include clearfix;
+  }
 }
