@@ -13,9 +13,14 @@ import {
   provideZoneChangeDetection,
 } from '@angular/core';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { provideHttpClient, withFetch } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withFetch,
+  withInterceptors,
+} from '@angular/common/http';
 import localeIt from '@angular/common/locales/it';
 import { registerLocaleData } from '@angular/common';
+import { delayInterceptor } from './interceptors/delay.interceptor';
 
 registerLocaleData(localeIt);
 
@@ -35,7 +40,7 @@ export function provideCore({ routes }: CoreOptions) {
     provideZoneChangeDetection({ eventCoalescing: true }),
 
     provideAnimationsAsync(),
-    provideHttpClient(withFetch()),
+    provideHttpClient(withFetch(), withInterceptors([delayInterceptor])),
     provideRouter(
       routes,
       withRouterConfig({

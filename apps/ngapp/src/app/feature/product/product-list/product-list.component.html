@@ -1,9 +1,15 @@
 <code class="m-0 mb-2">products-list.component.ts</code>
 <h1>Products</h1>
 
-<button mat-raised-button color="primary" (click)="addProduct()">Add Product</button>
+<button mat-raised-button color="primary" (click)="addProduct()">
+  Add Product
+</button>
 
-<table mat-table [dataSource]="productsDataSource()" class="mat-elevation-z8 mt-2">
+<table
+  mat-table
+  [dataSource]="productsDataSource()"
+  class="mat-elevation-z8 mt-2"
+>
   <!-- ID Column -->
   <ng-container matColumnDef="id">
     <th mat-header-cell *matHeaderCellDef>ID</th>
@@ -32,9 +38,9 @@
   <ng-container matColumnDef="inStock">
     <th mat-header-cell *matHeaderCellDef>In Stock</th>
     <td mat-cell *matCellDef="let product">
-      <mat-icon color="primary">{{
-        product.inStock ? 'check' : 'close'
-      }}</mat-icon>
+      <mat-icon color="primary"
+        >{{ product.inStock ? 'check' : 'close' }}
+      </mat-icon>
     </td>
   </ng-container>
 

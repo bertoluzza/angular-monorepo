@@ -19,6 +19,4 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrl: './main-layout.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MainLayoutComponent {
-  year = new Date().getFullYear();
-}
+export class MainLayoutComponent {}
