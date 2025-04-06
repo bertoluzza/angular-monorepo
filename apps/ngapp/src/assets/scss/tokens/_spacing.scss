@@ -3,24 +3,6 @@
 // stylelint-disable declaration-no-important
 
 @layer utilities {
-  $spacer: 1rem;
-  $spacers: (
-    0: 0,
-    1: $spacer * 0.25,
-    2: $spacer * 0.5,
-    3: $spacer,
-    4: $spacer * 1.5,
-    5: $spacer * 3,
-    auto: auto,
-  );
-  $breakpoints: (
-    xs: null,
-    sm: 'min-width: 576px',
-    md: 'min-width: 768px',
-    lg: 'min-width: 992px',
-    xl: 'min-width: 1200px',
-    xxl: 'min-width: 1400px',
-  );
   $sides: (
     null: '',
     t: 'top',
@@ -37,9 +19,9 @@
     ),
   );
 
-  @each $bp, $media in $breakpoints {
-    @each $prop in (m, p) {
-      $css-prop: if($prop == m, margin, padding);
+  @each $bp, $media in $spacing-breakpoints {
+    @each $prop in ('m', 'p') {
+      $css-prop: if($prop == 'm', margin, padding);
 
       @each $side, $dirs in $sides {
         @each $size, $value in $spacers {
@@ -57,7 +39,9 @@
                     #{$css-prop}-#{$dir}: $value !important;
                   }
                 } @else {
-                  #{$css-prop}-#{$dirs}: $value !important;
+                  @if $dirs != '' {
+                    #{$css-prop}-#{$dirs}: $value !important;
+                  }
                 }
               }
             }
@@ -68,7 +52,9 @@
                   #{$css-prop}-#{$dir}: $value !important;
                 }
               } @else {
-                #{$css-prop}-#{$dirs}: $value !important;
+                @if $dirs != '' {
+                  #{$css-prop}-#{$dirs}: $value !important;
+                }
               }
             }
           }
