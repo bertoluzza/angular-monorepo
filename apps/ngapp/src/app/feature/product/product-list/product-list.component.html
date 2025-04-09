@@ -1,6 +1,10 @@
 <code class="m-0 mb-2">products-list.component.ts</code>
 <h1>Products</h1>
 
+<app-product-detail
+[product]="productsDataSource() ? productsDataSource()[0] : undefined"
+/>
+
 <button
   mat-raised-button
   color="primary"

@@ -26,6 +26,7 @@ import { finalize, switchMap } from 'rxjs';
 import { SpinnerService } from '../../../core/services/spinner.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmationModalComponent } from '../../../ui/confirmation-modal/confirmation-modal.component';
+import { ProductDetailComponent } from "../product-detail/product-detail.component";
 
 @Component({
   selector: 'app-product-list',
@@ -43,7 +44,8 @@ import { ConfirmationModalComponent } from '../../../ui/confirmation-modal/confi
     MatCellDef,
     MatRowDef,
     MatButtonModule,
-  ],
+    ProductDetailComponent
+],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
